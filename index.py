@@ -10,6 +10,10 @@ def search(user_input):
     user_input = user_input.lower()
     if user_input in data:
         return data[user_input]
+    elif user_input.title() in data:
+        return data[user_input.title()]
+    elif user_input.upper() in data:
+        return data[user_input.upper()]
     # To find a close match
     elif len(get_close_matches(user_input, data.keys())) > 0:
         close_word = get_close_matches(user_input, data.keys())[0]
